@@ -1,20 +1,5 @@
-
-
-<html>
-    <head>
-        <style>
-            h1{color:blueviolet; }
-            p{color:crimson}
-            div{position:absolute; width:750px; height:600px}
-            #rightSide { left: 650px; border-left: 1px solid black }
-            img{position: absolute}
-        </style>
-        <link href="smile.png" id="sml">
-        
-        <title>An interactive Game!</title>
-        <script>
             var numberOfFaces = 5;
-                var score=-1;
+            var score=0;
 
             function generateFaces()
             {
@@ -25,7 +10,6 @@
                 for (var j = 0; j < a; j++)
                 {
                     theLeftSide.childNodes[j].removeEventListener("click", function() {
-                       
                     });
                 }
 
@@ -36,7 +20,6 @@
                     DOM_img.style.left = (10 + (500 - 10) * Math.random()) + "px";
                     DOM_img.style.top = (10 + (500 - 10) * Math.random()) + "px";
                     theLeftSide.appendChild(DOM_img);
-
                 }
 
                 var leftImages = theLeftSide.cloneNode(true);
@@ -50,31 +33,13 @@
                 {
                     theLeftSide.childNodes[i].addEventListener("click", function() {
                         alert("Game Over. You scored:"+score);
-                        
                         window.location.reload();
                     });
                 }
 
-                score++;
                 theLeftSide.lastChild.addEventListener("click", function() {
-                    generateFaces()
+                    generateFaces();
+                    score++;
                 });
 
             }
-        </script>
-    </head>
-    <body>
-    <button onclick="generateFaces()">Button</button> 
-
-
-        <h1>Matching Game!!</h1>     
-        <p>Click on the extra smiley on the left side!!</p>
-
-        <div id="leftSide">            
-
-
-        </div>
-        <div id="rightSide"></div>
-
-    </body>
-</html>

@@ -1,0 +1,26 @@
+h1{
+color:blueviolet;
+}
+p
+{
+color:crimson;
+}
+div{
+position:absolute;
+width:750px;
+height:600px;
+}
+#rightSide{
+left: 650px;
+border-left:1px solid black;
+}
+img{
+position: absolute;
+}
+body{
+	background: #87cefa;
+}
+button{
+	width: 100px;
+	height: 40px;
+}
